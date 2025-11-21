@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
-    "fecha": "2025-11-21 04:32:28",
-=======
-    "fecha": "2025-11-21 04:32:32",
->>>>>>> Stashed changes
+    "fecha": "2025-11-21 04:49:04",
     "status": "SUCCESS",
     "mensaje": "Scraping completado correctamente",
     "extra": {
