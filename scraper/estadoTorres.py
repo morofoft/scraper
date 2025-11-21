@@ -1,6 +1,4 @@
-
-
-
+import os
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -9,8 +7,8 @@ from datetime import datetime
 LOGIN_URL = "http://gestiontrabajos.uce.edu.do:82/redmine/login"
 ISSUE_URL = "http://gestiontrabajos.uce.edu.do:82/redmine/issues/11455"
 
-USUARIO = "rt2020-2872"
-CLAVE = "Rt%2022002"
+USUARIO = os.getenv("REDMINE_USER")
+CLAVE = os.getenv("REDMINE_PASS")
 
 session = requests.Session()
 
@@ -35,9 +33,7 @@ def write_log(status, message, extra=None):
         json.dump(log_data, f, ensure_ascii=False, indent=4)
     print("LOG:", log_data)
 
-# ====================================================
-# 1. Cargar página de login
-# ====================================================
+# 1. Cargar página de login #
 resp = session.get(LOGIN_URL, headers=headers)
 soup_login = BeautifulSoup(resp.text, "html.parser")
 
@@ -48,9 +44,7 @@ if not token:
 
 auth_token = token["value"]
 
-# ====================================================
-# 2. Login real
-# ====================================================
+# 2. Login real #
 payload = {
     "username": USUARIO,
     "password": CLAVE,
@@ -73,9 +67,7 @@ if "Cerrar sesión" not in resp_login.text and "Mi cuenta" not in resp_login.tex
 
 print("LOGIN OK ✔")
 
-# ====================================================
-# 3. Acceder al issue con las COOKIES del login
-# ====================================================
+# 3. Acceder al issue con las COOKIES del login #
 headers_issue = dict(headers)
 headers_issue["Referer"] = LOGIN_URL
 
@@ -93,18 +85,14 @@ print("ISSUE CARGADO ✔")
 
 soup = BeautifulSoup(issue_html, "html.parser")
 
-# ====================================================
-# 4. Extraer Estado
-# ====================================================
+# 4. Extraer Estado #
 def get_attribute_value(soup, classname):
     block = soup.select_one(f".attributes .{classname}.attribute .value")
     return block.get_text(strip=True) if block else None
 
 EstadoTesis = get_attribute_value(soup, "status")
 
-# ====================================================
-# 5. Extraer historial
-# ====================================================
+# 5. Extraer historial #
 historial = []
 
 journal_entries = soup.select("#history .journal.has-details")
@@ -123,9 +111,7 @@ for journal in journal_entries:
         "cambios": cambios
     })
 
-# ====================================================
-# 6. Guardar JSON final
-# ====================================================
+# 6. Guardar JSON final #
 data = {
     "actualizado": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     "estado_actual": EstadoTesis,
