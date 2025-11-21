@@ -1,0 +1,23 @@
+{
+    "actualizado": "2025-11-21 01:01:49",
+    "estado_actual": "Tema Enviado",
+    "historial": [
+        {
+            "numero": "#1",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "15 Noviembre 2025 03:43 AM",
+            "cambios": [
+                "Estado cambiado de Tema Creado a Tema Enviado",
+                "% Realizado cambiado de 10 a 20"
+            ]
+        },
+        {
+            "numero": "#2",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "20 Noviembre 2025 08:18 PM",
+            "cambios": [
+                "Teléfono de contacto establecido a 829 698 8621"
+            ]
+        }
+    ]
+}
