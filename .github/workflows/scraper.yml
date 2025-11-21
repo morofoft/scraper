@@ -2,7 +2,7 @@ name: Ejecutar Scraper UCE
 
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: '* * * * *'
   workflow_dispatch:
 
 jobs:
