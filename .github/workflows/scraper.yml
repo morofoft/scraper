@@ -12,6 +12,10 @@ jobs:
     permissions:
       contents: write
 
+    env:
+      REDMINE_USER: ${{ secrets.REDMINE_USER }}
+      REDMINE_PASS: ${{ secrets.REDMINE_PASS }}
+
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v3
