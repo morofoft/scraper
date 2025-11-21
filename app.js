@@ -29,6 +29,8 @@ fetch(url)
 
         const estadoActual = data.estado_actual || "Desconocido";
 
+        // Estado
+        document.getElementById("estado").innerHTML = estadoActual;
         document.getElementById("badgeEstado").className =
             "estado-badge text-white " + colorBadge(estadoActual);
 
@@ -76,3 +78,4 @@ fetch(url)
     .catch(() => {
         document.getElementById("estado").innerText = "Error al cargar datos.";
     });
+
