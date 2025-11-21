@@ -44,15 +44,11 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-
-          # Agregamos solo los archivos que realmente existen y cambian
+          git pull origin main --rebase --autostash || true
           git add datos_issue.json log_scraper.json || true
-
-          # Si no hay nada en staging, salimos sin error
           if git diff --cached --quiet; then
             echo "No hay cambios para commitear."
             exit 0
           fi
-
           git commit -m "Auto actualización $(date)"
           git push
