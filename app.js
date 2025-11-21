@@ -1,5 +1,5 @@
 // URL del JSON en GitHub
-const url = "https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/datos_issue.json";
+const url = "https://raw.githubusercontent.com/morofoft/scraper/main/datos_issue.json";
 
 // Guardamos estado anterior en localStorage
 const estadoPrevio = localStorage.getItem("estado_anterior");
@@ -66,3 +66,4 @@ fetch(url)
         document.getElementById("estado").innerText = "Error al cargar datos.";
         console.error(err);
     });
+
