@@ -39,16 +39,22 @@ jobs:
             echo "No hay cambios, no commit."
             exit 0
           fi
-
+          
       - name: Guardar cambios
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git pull origin main --rebase --autostash || true
+
+          # Traer cambios remotos, pero ignorar conflictos en json autogenerados
+          git fetch origin main
+          git reset --soft origin/main
+
           git add datos_issue.json log_scraper.json || true
+
           if git diff --cached --quiet; then
             echo "No hay cambios para commitear."
             exit 0
           fi
+
           git commit -m "Auto actualización $(date)"
           git push
