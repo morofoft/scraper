@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 from datetime import datetime
+import pytz
 
 LOGIN_URL = "http://gestiontrabajos.uce.edu.do:82/redmine/login"
 ISSUE_URL = "http://gestiontrabajos.uce.edu.do:82/redmine/issues/11455"
@@ -127,3 +128,4 @@ write_log("SUCCESS", "Scraping completado correctamente", {
 })
 
 print("SCRAPING COMPLETADO ✔")
+
