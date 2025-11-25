@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 from datetime import datetime
+import pytz
 
 LOGIN_URL = "http://gestiontrabajos.uce.edu.do:82/redmine/login"
 ISSUE_URL = "http://gestiontrabajos.uce.edu.do:82/redmine/issues/11455"
@@ -113,7 +114,7 @@ for journal in journal_entries:
 
 # 6. Guardar JSON final #
 data = {
-    "actualizado": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+    "actualizado": datetime.now(santo_domingo_tz).strftime("%Y-%m-%d %H:%M:%S"),
     "estado_actual": EstadoTesis,
     "historial": historial
 }
@@ -127,3 +128,4 @@ write_log("SUCCESS", "Scraping completado correctamente", {
 })
 
 print("SCRAPING COMPLETADO ✔")
+
