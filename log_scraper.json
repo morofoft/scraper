@@ -1,9 +1,9 @@
 {
-    "fecha": "2025-11-27 19:08:32",
+    "fecha": "2025-11-27 19:25:41",
     "status": "SUCCESS",
     "mensaje": "Scraping completado correctamente",
     "extra": {
         "estado": "Tema Enviado",
-        "historial_items": 3
+        "historial_items": 4
     }
 }
