@@ -22,7 +22,7 @@ function tiempoTranscurrido(fecha) {
 }
 
 const ESTADO_COLORES = [
-    { clave: "creado", clase: "bg-slate-500 text-white" },
+    { clave: "creado", codexclase: "bg-slate-500 text-white" },
     { clave: "enviado", clase: "bg-sky-500 text-white" },
     { clave: "revisión", clase: "bg-yellow-300 text-slate-900" },
     { clave: "revision", clase: "bg-yellow-300 text-slate-900" },
