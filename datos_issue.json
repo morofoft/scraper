@@ -1,6 +1,6 @@
 {
-    "actualizado": "2025-12-12 17:18:46",
-    "estado_actual": "Tema Aceptado",
+    "actualizado": "2025-12-12 17:40:25",
+    "estado_actual": "Anteproyecto Enviado",
     "historial": [
         {
             "numero": "#1",
@@ -53,6 +53,25 @@
                 "Añadido Fichero Anteproyecto_Pacas Torres import.docx Anteproyecto_Pacas Torres import.docx",
                 "Estado cambiado de Tema Comentado a Tema Aceptado",
                 "% Realizado cambiado de 20 a 30"
+            ]
+        },
+        {
+            "numero": "#7",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "12 Diciembre 2025 01:29 PM",
+            "cambios": [
+                "Estado cambiado de Tema Aceptado a Anteproyecto Creado",
+                "% Realizado cambiado de 30 a 40",
+                "Se actualizó Documento del Anteproyecto"
+            ]
+        },
+        {
+            "numero": "#8",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "12 Diciembre 2025 01:31 PM",
+            "cambios": [
+                "Estado cambiado de Anteproyecto Creado a Anteproyecto Enviado",
+                "% Realizado cambiado de 40 a 50"
             ]
         }
     ]
