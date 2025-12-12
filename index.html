@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Seguimiento de Tesis Randy Torres!</title>
 
     <!-- Bootstrap -->
@@ -80,14 +81,14 @@
     <div class="container">
 
         <h1 class="text-center mb-4">
-            <i class="fa-solid fa-circle-nodes text-primary fa-2xl"></i>
-            Seguimiento de Tesis – <b>[ Randy Torres ]<b>  
+            <i class="fa-solid fa-circle-nodes text-primary fa-2xl" aria-label="Seguimiento"></i>
+            Seguimiento de Tesis – <b>[ Randy Torres ]</b>
         </h1>
 
         <!-- Estado -->
         <div id="estadoCard" class="glass-card mb-4">
             <h3 class="mb-3">
-                <i class="fa-solid fa-circle-info text-primary"></i> 
+                <i class="fa-solid fa-circle-info text-primary" aria-hidden="true"></i>
                 Estado Actual
             </h3>
 
@@ -102,11 +103,11 @@
         <!-- Historial -->
         <div class="glass-card">
             <h3>
-                <i class="fa-solid fa-clock-rotate-left text-primary"></i>
+                <i class="fa-solid fa-clock-rotate-left text-primary" aria-hidden="true"></i>
                 Historial de Cambios
             </h3>
 
-            <div id="historial" class="timeline"></div>
+            <div id="historial" class="timeline" aria-live="polite"></div>
         </div>
     <footer>
         <p>© 2025 Pedro Garcia. Todos los derechos reservados.</p>
@@ -117,5 +118,3 @@
 
 </body>
 </html>
-
-
