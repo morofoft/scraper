@@ -1,6 +1,6 @@
 {
-    "actualizado": "2025-12-12 01:58:36",
-    "estado_actual": "Tema Enviado",
+    "actualizado": "2025-12-12 03:38:23",
+    "estado_actual": "Tema Aceptado",
     "historial": [
         {
             "numero": "#1",
@@ -34,6 +34,25 @@
             "cambios": [
                 "Añadido Fichero Reglamento de trabajos de Grado versión final v1.6.docx Reglamento de trabajos de Grado versión final v1.6.docx",
                 "Añadido Fichero CALENDARIO DGIC PRELIMINAR GRADUACIÓN 2026.pdf CALENDARIO DGIC PRELIMINAR GRADUACIÓN 2026.pdf"
+            ]
+        },
+        {
+            "numero": "#5",
+            "usuario": "20 minutos",
+            "fecha": "11 Diciembre 2025 11:18 PM",
+            "cambios": [
+                "Añadido Fichero Anteproyecto_Pacas Torres import.docx Anteproyecto_Pacas Torres import.docx",
+                "Estado cambiado de Tema Enviado a Tema Comentado"
+            ]
+        },
+        {
+            "numero": "#6",
+            "usuario": "19 minutos",
+            "fecha": "11 Diciembre 2025 11:19 PM",
+            "cambios": [
+                "Añadido Fichero Anteproyecto_Pacas Torres import.docx Anteproyecto_Pacas Torres import.docx",
+                "Estado cambiado de Tema Comentado a Tema Aceptado",
+                "% Realizado cambiado de 20 a 30"
             ]
         }
     ]
