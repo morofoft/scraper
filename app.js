@@ -1,268 +1,246 @@
+// ==================================
+// CONFIGURACIÓN
+// ==================================
 const url = "https://raw.githubusercontent.com/morofoft/scraper/main/datos_issue.json";
-
-const badgeBaseClasses = "inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold";
 const estadoPrevio = localStorage.getItem("estado_anterior");
 
-// ✅ etapas (stepper)
-const ETAPAS = [
-  { key: "creado", label: "Propuesta", hint: "Tema definido y plan inicial" },
-  { key: "enviado", label: "Envío", hint: "Documento enviado para revisión" },
-  { key: "revision", label: "Revisión", hint: "Observaciones y evaluación" },
-  { key: "aprobado", label: "Aprobada", hint: "Aprobación formal / listo" },
+const badgeBaseClasses = "px-4 py-1 rounded-full text-xs font-bold text-white";
+
+// ==================================
+// ESTADOS FORMALES DEL PROCESO
+// (NO solo etapas, estados oficiales)
+// ==================================
+const ESTADOS_FORMALES = [
+  { match: ["tema creado"], codigo: "TEMA_CREADO", label: "Tema creado", etapa: "Tema", progreso: 10, color: "bg-slate-600" },
+  { match: ["tema enviado"], codigo: "TEMA_ENVIADO", label: "Tema enviado", etapa: "Tema", progreso: 20, color: "bg-sky-600" },
+  { match: ["tema comentado"], codigo: "TEMA_COMENTADO", label: "Tema comentado", etapa: "Tema", progreso: 25, color: "bg-amber-500" },
+  { match: ["tema aceptado", "tema aprobado"], codigo: "TEMA_APROBADO", label: "Tema aprobado", etapa: "Tema", progreso: 30, color: "bg-emerald-600" },
+
+  { match: ["anteproyecto creado"], codigo: "ANTEPROYECTO_CREADO", label: "Anteproyecto creado", etapa: "Anteproyecto", progreso: 40, color: "bg-indigo-600" },
+  { match: ["anteproyecto enviado"], codigo: "ANTEPROYECTO_ENVIADO", label: "Anteproyecto enviado", etapa: "Anteproyecto", progreso: 50, color: "bg-sky-700" },
+  { match: ["anteproyecto comentado"], codigo: "ANTEPROYECTO_COMENTADO", label: "Anteproyecto comentado", etapa: "Anteproyecto", progreso: 60, color: "bg-amber-600" },
+  { match: ["anteproyecto aceptado", "anteproyecto aprobado"], codigo: "ANTEPROYECTO_APROBADO", label: "Anteproyecto aprobado", etapa: "Anteproyecto", progreso: 70, color: "bg-emerald-700" },
+
+  { match: ["tesis en desarrollo"], codigo: "TESIS_DESARROLLO", label: "Tesis en desarrollo", etapa: "Desarrollo", progreso: 80, color: "bg-indigo-700" },
+  { match: ["tesis enviada"], codigo: "TESIS_ENVIADA", label: "Tesis enviada a jurado", etapa: "Evaluación", progreso: 90, color: "bg-sky-800" },
+  { match: ["tesis aprobada"], codigo: "TESIS_APROBADA", label: "Tesis aprobada", etapa: "Final", progreso: 100, color: "bg-emerald-800" }
 ];
 
-// ✅ colores
-const ESTADO_COLORES = [
-  { clave: "creado", clase: "bg-slate-600 text-white" },
-  { clave: "enviado", clase: "bg-sky-600 text-white" },
-  { clave: "revisión", clase: "bg-amber-300 text-slate-900" },
-  { clave: "revision", clase: "bg-amber-300 text-slate-900" },
-  { clave: "aprobado", clase: "bg-emerald-600 text-white" },
-  { clave: "rechazado", clase: "bg-rose-600 text-white" },
-  { clave: "proceso", clase: "bg-indigo-600 text-white" },
-  { clave: "espera", clase: "bg-slate-900 text-white" },
-];
+const CHECKLIST_REGLAMENTARIO = [
+    {
+      id: "tema_creado",
+      label: "Tema creado",
+      cumple: data =>
+        resolverEstadoFormal(data.estado_actual)?.codigo?.startsWith("TEMA")
+    },
+    {
+      id: "tema_aprobado",
+      label: "Tema aprobado",
+      cumple: data =>
+        resolverEstadoFormal(data.estado_actual)?.codigo === "TEMA_APROBADO"
+        || data.historial?.some(h =>
+          h.cambios?.some(c => c.toLowerCase().includes("tema aceptado"))
+        )
+    },
+    {
+      id: "anteproyecto_creado",
+      label: "Anteproyecto creado",
+      cumple: data =>
+        data.estado_actual?.toLowerCase().includes("anteproyecto creado")
+        || data.estado_actual?.toLowerCase().includes("anteproyecto enviado")
+        || data.estado_actual?.toLowerCase().includes("anteproyecto aprobado")
+    },
+    {
+      id: "anteproyecto_enviado",
+      label: "Anteproyecto enviado",
+      cumple: data =>
+        data.estado_actual?.toLowerCase().includes("anteproyecto enviado")
+        || data.estado_actual?.toLowerCase().includes("anteproyecto aprobado")
+    },
+    {
+      id: "anteproyecto_aprobado",
+      label: "Anteproyecto aprobado",
+      cumple: data =>
+        resolverEstadoFormal(data.estado_actual)?.codigo === "ANTEPROYECTO_APROBADO"
+        || data.historial?.some(h =>
+          h.cambios?.some(c => c.toLowerCase().includes("anteproyecto aceptado"))
+        )
+    },
+    {
+      id: "documentos",
+      label: "Documentos requeridos cargados",
+      cumple: data =>
+        data.historial?.some(h =>
+          h.cambios?.some(c => c.toLowerCase().includes("añadido fichero"))
+        )
+    },
+    {
+      id: "historial",
+      label: "Historial de revisiones disponible",
+      cumple: data =>
+        Array.isArray(data.historial) && data.historial.length > 0
+    }
+  ];
+  
+// ==================================
+// ETAPAS GENERALES
+// ==================================
+const ETAPAS_PROCESO = ["Tema", "Anteproyecto", "Desarrollo", "Evaluación", "Final"];
+
+// ==================================
+// UTILIDADES
+// ==================================
+function resolverEstadoFormal(texto) {
+  if (!texto) return null;
+  const t = texto.toLowerCase();
+  return ESTADOS_FORMALES.find(e => e.match.some(m => t.includes(m)));
+}
 
 function tiempoTranscurrido(fecha) {
-  const f = new Date(fecha);
-  const ahora = new Date();
-  const diffMin = Math.floor((ahora - f) / 60000);
-
-  if (Number.isNaN(diffMin)) return "Fecha desconocida";
-  if (diffMin < 1) return "Hace unos segundos";
-  if (diffMin < 60) return `Hace ${diffMin} minutos`;
-
-  const hrs = Math.floor(diffMin / 60);
-  if (hrs < 24) return `Hace ${hrs} horas`;
-
-  const dias = Math.floor(hrs / 24);
-  if (dias < 7) return `Hace ${dias} días`;
-  const semanas = Math.floor(dias / 7);
-  return `Hace ${semanas} semana${semanas > 1 ? "s" : ""}`;
+  const f = new Date(fecha.replace(" ", "T"));
+  if (isNaN(f)) return null;
+  return Math.floor((new Date() - f) / (1000 * 60 * 60 * 24));
 }
 
-function colorBadge(estado) {
-  const normalizado = (estado || "").toLowerCase();
-  const encontrado = ESTADO_COLORES.find(({ clave }) => normalizado.includes(clave));
-  return encontrado ? encontrado.clase : "bg-slate-700 text-white";
+// ==================================
+// SALUD DEL PROYECTO
+// ==================================
+function calcularSalud(dias) {
+  if (dias === null) return { label: "Desconocido", color: "bg-slate-600" };
+  if (dias <= 7) return { label: "OK", color: "bg-emerald-600" };
+  if (dias <= 14) return { label: "Atención", color: "bg-amber-500" };
+  return { label: "Atraso", color: "bg-rose-600" };
 }
 
-// ✅ estado → copy humano + progreso + etapa
-function interpretarEstado(estado) {
-  const e = (estado || "").toLowerCase();
+// ==================================
+// RENDER ETAPAS
+// ==================================
+function renderEtapas(etapaActual) {
+  const stepper = document.getElementById("stepper");
+  if (!stepper) return;
 
-  if (e.includes("aprob")) return { etapaIndex: 3, progreso: 100, humano: "¡Excelente! La tesis está aprobada ✅" };
-  if (e.includes("revis") ) return { etapaIndex: 2, progreso: 75, humano: "Vamos bien: está en revisión con observaciones 📝" };
-  if (e.includes("envi"))  return { etapaIndex: 1, progreso: 45, humano: "Documento enviado. A la espera de revisión 🔎" };
-  if (e.includes("cread")) return { etapaIndex: 0, progreso: 20, humano: "Inicio sólido: propuesta y estructura en marcha 🚀" };
-  if (e.includes("rechaz"))return { etapaIndex: 2, progreso: 60, humano: "Hay ajustes pendientes. Se recomienda corregir y reenviar ⚠️" };
-  if (e.includes("proceso"))return { etapaIndex: 2, progreso: 65, humano: "En proceso: avanzando con pasos firmes 💪" };
-  if (e.includes("espera"))return { etapaIndex: 1, progreso: 40, humano: "En espera: pendiente de respuesta o validación ⏳" };
-
-  return { etapaIndex: 1, progreso: 35, humano: "Estado registrado. Seguimos monitoreando 📌" };
+  stepper.innerHTML = ETAPAS_PROCESO.map(e => `
+    <li class="flex items-center gap-3">
+      <span class="h-3 w-3 rounded-full ${e === etapaActual ? "bg-sky-500" : "bg-slate-600"}"></span>
+      <span class="${e === etapaActual ? "text-white font-semibold" : "text-slate-400"}">${e}</span>
+    </li>
+  `).join("");
 }
 
-function renderStepper(etapaIndex) {
-  const el = document.getElementById("stepper");
-  if (!el) return;
-
-  el.innerHTML = ETAPAS.map((et, idx) => {
-    const done = idx < etapaIndex;
-    const current = idx === etapaIndex;
-
-    const dot = done
-      ? "bg-emerald-500"
-      : current
-      ? "bg-sky-500 animate-pulse"
-      : "bg-slate-300 dark:bg-slate-600";
-
-    const text = done
-      ? "text-slate-900 dark:text-white"
-      : current
-      ? "text-slate-900 dark:text-white"
-      : "text-slate-600 dark:text-slate-300";
-
-    const badge = done
-      ? "Completada"
-      : current
-      ? "Actual"
-      : "Pendiente";
-
-    const badgeCls = done
-      ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300"
-      : current
-      ? "bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300"
-      : "bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300";
-
-    return `
-      <li class="flex items-start gap-3">
-        <span class="mt-1 h-3 w-3 rounded-full ${dot}"></span>
-        <div class="flex-1">
-          <div class="flex items-center justify-between gap-3">
-            <p class="font-semibold ${text}">${et.label}</p>
-            <span class="text-[11px] font-bold uppercase tracking-wide px-3 py-1 rounded-full ${badgeCls}">
-              ${badge}
-            </span>
-          </div>
-          <p class="text-xs mt-1 text-slate-500 dark:text-slate-400">${et.hint}</p>
-        </div>
-      </li>
-    `;
-  }).join("");
+// ==================================
+// KPIs
+// ==================================
+function obtenerResponsable(historial) {
+  return historial?.length ? historial[historial.length - 1].usuario : "—";
 }
 
+function obtenerUltimaAccion(historial) {
+  if (!historial?.length) return { accion: "—", fecha: "—" };
+  const u = historial[historial.length - 1];
+  return {
+    accion: u.cambios?.slice(-1)[0] || "—",
+    fecha: u.fecha || "—"
+  };
+}
+
+// ==================================
+// HISTORIAL
+// ==================================
 function renderHistorial(historial) {
-  if (!historial || !Array.isArray(historial) || historial.length === 0) {
-    return `<p class="text-slate-500 dark:text-slate-400 italic">Aún no se han registrado cambios.</p>`;
+  if (!historial?.length) {
+    return `<p class="text-slate-400 italic">No hay historial disponible.</p>`;
   }
 
-  return historial.map((h, i) => {
-    const usuario = h.usuario || "Responsable no indicado";
-    const fecha = h.fecha || "Fecha no disponible";
-    const numero = h.numero || "Movimiento";
-    const cambios = (h.cambios || []).slice(0, 8);
-
-    return `
-      <article data-timeline-item
-        class="relative opacity-0 translate-x-6 transition-all duration-700 ease-out
-               bg-white/80 dark:bg-slate-900/30
-               border border-slate-100 dark:border-slate-700/70
-               rounded-2xl p-5 shadow-sm"
-        style="transition-delay:${i * 110}ms">
-        
-        <span class="absolute -left-[30px] top-6 w-4 h-4 rounded-full bg-sky-500 border-4 border-white dark:border-slate-950"></span>
-
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <h4 class="font-bold text-slate-900 dark:text-white">${numero}</h4>
-          <span class="text-xs text-slate-500 dark:text-slate-400">${fecha}</span>
+  return historial.map(h => `
+    <div class="relative pl-4">
+      <span class="absolute -left-[6px] top-2 w-3 h-3 rounded-full bg-sky-500"></span>
+      <div class="rounded-xl bg-black/40 border border-white/10 p-4 space-y-2">
+        <div class="flex justify-between text-xs text-slate-400">
+          <strong class="text-white">${h.numero}</strong>
+          <span>${h.fecha}</span>
         </div>
-
-        <p class="mt-1 text-sm text-sky-700 dark:text-sky-300 font-semibold">
-          <i class="fa-solid fa-user-check mr-2 opacity-80"></i>${usuario}
-        </p>
-
-        <ul class="mt-3 space-y-1 text-sm text-slate-700 dark:text-slate-300">
-          ${cambios.map(c => `<li class="flex gap-2"><span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-400"></span><span>${c}</span></li>`).join("")}
+        <div class="text-sm text-slate-300 font-semibold">${h.usuario}</div>
+        <ul class="list-disc list-inside text-sm text-slate-300">
+          ${h.cambios.map(c => `<li>${c}</li>`).join("")}
         </ul>
-      </article>
-    `;
-  }).join("");
+      </div>
+    </div>
+  `).join("");
 }
 
-function animarTimeline() {
-  requestAnimationFrame(() => {
-    document.querySelectorAll("[data-timeline-item]").forEach(item => {
-      item.classList.remove("opacity-0", "translate-x-6");
-    });
-  });
-}
-
+// ==================================
+// CARGA PRINCIPAL
+// ==================================
 async function cargarDatos() {
-  const estadoElemento = document.getElementById("estado");
-  const badgeEstado = document.getElementById("badgeEstado");
-  const ultimaActualizacion = document.getElementById("ultimaActualizacion");
-  const alertaCambio = document.getElementById("alertaCambio");
-  const historialElemento = document.getElementById("historial");
+  const r = await fetch(url);
+  const data = await r.json();
 
-  const progressBar = document.getElementById("progressBar");
-  const progressPercent = document.getElementById("progressPercent");
-  const progressText = document.getElementById("progressText");
-  const estadoHumano = document.getElementById("estadoHumano");
+  const estadoFormal = resolverEstadoFormal(data.estado_actual);
 
-  const kpiUltimaAccion = document.getElementById("kpiUltimaAccion");
-  const kpiUltimaAccionSub = document.getElementById("kpiUltimaAccionSub");
-  const kpiTotalCambios = document.getElementById("kpiTotalCambios");
-  const kpiResponsable = document.getElementById("kpiResponsable");
-  const kpiInactividad = document.getElementById("kpiInactividad");
+  // ESTADO
+  document.getElementById("estado").innerText = estadoFormal?.label || data.estado_actual;
+  document.getElementById("badgeEstado").className =
+    `${badgeBaseClasses} ${estadoFormal?.color || "bg-slate-600"}`;
+  document.getElementById("badgeEstado").innerText = estadoFormal?.etapa || "—";
 
-  estadoElemento.innerText = "Cargando…";
-  badgeEstado.className = `${badgeBaseClasses} bg-slate-600 text-white`;
-  badgeEstado.innerHTML = `<i class="fa-solid fa-rotate"></i> Espera`;
+  // PROGRESO
+  document.getElementById("progressBar").style.width = `${estadoFormal?.progreso || 0}%`;
+  document.getElementById("progressPercent").innerText = `${estadoFormal?.progreso || 0}%`;
 
-  try {
-    const r = await fetch(url, { cache: "no-store" });
-    const data = await r.json();
+  // ETAPAS
+  renderEtapas(estadoFormal?.etapa);
 
-    const estadoActual = data.estado_actual || "Desconocido";
-    const meta = interpretarEstado(estadoActual);
+  // KPIs
+  document.getElementById("kpiResponsable").innerText = obtenerResponsable(data.historial);
+  document.getElementById("kpiTotalCambios").innerText = data.historial?.length || 0;
 
-    // Estado
-    estadoElemento.innerText = estadoActual;
-    badgeEstado.className = `${badgeBaseClasses} ${colorBadge(estadoActual)}`;
-    badgeEstado.innerText = estadoActual;
+  const ultima = obtenerUltimaAccion(data.historial);
+  document.getElementById("kpiUltimaAccion").innerText = ultima.accion;
+  document.getElementById("kpiUltimaAccionSub").innerText = ultima.fecha;
 
-    // Human copy + progress
-    estadoHumano.innerText = meta.humano;
-    progressText.innerText = `Etapa actual: ${ETAPAS[Math.min(meta.etapaIndex, ETAPAS.length - 1)]?.label || "Seguimiento"}`;
-    progressPercent.innerText = `${meta.progreso}%`;
-    progressBar.style.width = `${meta.progreso}%`;
+  const dias = tiempoTranscurrido(data.actualizado);
+  document.getElementById("kpiInactividad").innerText =
+    dias !== null ? `Hace ${dias} días` : "—";
 
-    // Stepper
-    renderStepper(meta.etapaIndex);
-
-    // Fecha
-    const fechaActualizada = data.actualizado || "";
-    ultimaActualizacion.innerText = fechaActualizada
-      ? `Última actualización: ${tiempoTranscurrido(fechaActualizada)}`
-      : "Sin fecha de actualización";
-    ultimaActualizacion.title = fechaActualizada;
-
-    // KPIs
-    const historial = Array.isArray(data.historial) ? data.historial : [];
-    const last = historial[0] || historial[historial.length - 1]; // por si viene invertido
-    const lastUser = (last?.usuario || "—");
-    const lastFecha = (data.actualizado || last?.fecha || "");
-
-    kpiTotalCambios.innerText = String(historial.length || 0);
-    kpiResponsable.innerText = lastUser;
-
-    const lastCambio = (last?.cambios && last.cambios[0]) ? last.cambios[0] : "Sin detalle de cambios";
-    kpiUltimaAccion.innerText = lastCambio;
-    kpiUltimaAccionSub.innerText = lastFecha ? `Registrado: ${tiempoTranscurrido(lastFecha)}` : "Sin fecha registrada";
-
-    kpiInactividad.innerText = lastFecha ? tiempoTranscurrido(lastFecha) : "—";
-
-    // Alerta cambio (premium)
-    if (estadoPrevio && estadoPrevio !== estadoActual) {
-      alertaCambio.innerHTML = `
-        <div id="alertaCambioBox"
-             class="opacity-0 translate-y-3 transition-all duration-700
-                    border border-rose-200 dark:border-rose-900/60
-                    bg-rose-50 dark:bg-rose-900/25
-                    text-rose-700 dark:text-rose-300
-                    rounded-2xl p-4 shadow-sm">
-          <div class="flex items-center gap-2 font-semibold">
-            <i class="fa-solid fa-bell"></i>
-            <span>Actualización detectada</span>
-          </div>
-          <p class="mt-2 text-sm">
-            Antes: <b>${estadoPrevio}</b><br>
-            Ahora: <b>${estadoActual}</b>
-          </p>
-        </div>
-      `;
-      requestAnimationFrame(() => {
-        document.getElementById("alertaCambioBox")?.classList.remove("opacity-0", "translate-y-3");
-      });
-    } else {
-      alertaCambio.innerHTML = "";
-    }
-
-    localStorage.setItem("estado_anterior", estadoActual);
-
-    // Historial (timeline animado)
-    historialElemento.innerHTML = renderHistorial(historial);
-    animarTimeline();
-
-  } catch (error) {
-    estadoElemento.innerText = "Error al cargar datos.";
-    alertaCambio.innerHTML = "";
-    ultimaActualizacion.innerText = "";
-    document.getElementById("estadoHumano").innerText = "No pudimos obtener los datos. Intenta más tarde.";
-    document.getElementById("historial").innerHTML =
-      `<p class="text-rose-600 dark:text-rose-300">No se pudo obtener el historial. Inténtalo más tarde.</p>`;
-    console.error("Error cargando datos del issue", error);
+  // SALUD
+  const salud = calcularSalud(dias);
+  const saludEl = document.getElementById("saludProyecto");
+  if (saludEl) {
+    saludEl.innerText = salud.label;
+    saludEl.className = `${badgeBaseClasses} ${salud.color}`;
   }
+
+  // HISTORIAL
+  document.getElementById("historial").innerHTML = renderHistorial(data.historial);
+
+  localStorage.setItem("estado_anterior", data.estado_actual);
+
+  renderChecklist(data);
+
 }
 
+
+function renderChecklist(data) {
+    const contenedor = document.getElementById("checklist");
+    if (!contenedor) return;
+  
+    contenedor.innerHTML = CHECKLIST_REGLAMENTARIO.map(item => {
+      const ok = item.cumple(data);
+  
+      return `
+        <li class="flex items-center gap-3">
+          <span class="text-lg ${ok ? "text-emerald-400" : "text-rose-400"}">
+            <i class="fa-solid ${ok ? "fa-circle-check" : "fa-circle-xmark"}"></i>
+          </span>
+          <span class="${ok ? "text-slate-200" : "text-slate-400"}">
+            ${item.label}
+          </span>
+        </li>
+      `;
+    }).join("");
+  }
+  
+// ==================================
+// INIT
+// ==================================
 cargarDatos();

@@ -1,224 +1,216 @@
 <!DOCTYPE html>
-<html lang="es" class="">
+<html lang="es" class="dark">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Seguimiento de Tesis · Randy Torres</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seguimiento de Tesis · Ingeniería de Sistemas</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <script>
-    tailwind.config = {
-      darkMode: "class",   // 🔥 ESTA LÍNEA ARREGLA TODO
-      theme: {
-        extend: {
-          fontFamily: {
-            ui: ["Inter", "Segoe UI", "system-ui", "sans-serif"]
-          },
-          boxShadow: {
-            soft: "0 20px 40px rgba(0,0,0,.08)",
-            glow: "0 0 0 4px rgba(56,189,248,.14)"
-          }
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        ui: ["Inter", "Segoe UI", "system-ui", "sans-serif"]
+                    },
+                    colors: {
+                        panel: "#0B1220",
+                        panelSoft: "#0E1627",
+                        accent: "#38BDF8"
+                    },
+                    boxShadow: {
+                        glass: "0 20px 60px rgba(0,0,0,.6)",
+                        subtle: "0 0 0 1px rgba(255,255,255,.06)"
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-  
+    </script>
+
+    <style>
+        /* Fondo grid técnico */
+        .tech-grid {
+            background-image:
+                linear-gradient(to right, rgba(56, 189, 248, .08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(56, 189, 248, .08) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+    </style>
 </head>
 
-<body class="min-h-screen font-ui transition-colors duration-500
-             bg-gradient-to-br from-sky-100 via-slate-50 to-white
-             dark:from-slate-950 dark:via-slate-950 dark:to-slate-900
-             text-slate-800 dark:text-slate-200">
+<body class="min-h-screen font-ui text-slate-200 bg-panel">
 
-  <!-- Decorative blobs -->
-  <div class="absolute inset-0 -z-10 overflow-hidden">
-    <div class="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-sky-300/30 dark:bg-sky-500/10 blur-3xl"></div>
-    <div class="absolute top-1/2 -left-32 h-96 w-96 rounded-full bg-indigo-300/30 dark:bg-indigo-500/10 blur-3xl"></div>
-  </div>
+    <!-- ================= FONDO ================= -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+        <!-- Gradiente base -->
+        <div class="absolute inset-0 bg-gradient-to-br from-panel via-panelSoft to-black"></div>
 
-  <main class="max-w-6xl mx-auto px-5 py-10 space-y-8">
+        <!-- Grid técnico -->
+        <div class="absolute inset-0 tech-grid opacity-40"></div>
 
-    <!-- Top bar -->
-    <header data-animate class="opacity-0 translate-y-6 transition-all duration-700">
-      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div class="flex items-center gap-4">
-          <div class="h-12 w-12 rounded-2xl bg-white/70 dark:bg-slate-800/70 border border-white/40 dark:border-slate-700/60 backdrop-blur shadow-soft flex items-center justify-center">
-            <i class="fa-solid fa-circle-nodes text-sky-600 text-xl"></i>
-          </div>
-          <div>
-            <h1 class="text-xl md:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-              Seguimiento de Tesis
-            </h1>
-            <p class="text-sm text-slate-500 dark:text-slate-400">
-              Randy Torres · Panel de avance académico
-            </p>
-          </div>
-        </div>
+        <!-- Vignette -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60"></div>
+    </div>
 
-        <!-- Dark switch -->
-        <button id="darkToggle"
-          class="group relative inline-flex h-11 w-24 items-center rounded-full
-                 bg-slate-200 dark:bg-slate-700 border border-white/60 dark:border-slate-600/70
-                 shadow-sm transition">
-          <span class="absolute left-1 h-9 w-9 rounded-full bg-white dark:bg-slate-900 shadow transition-all duration-300 group-[.dark]:translate-x-12"></span>
-          <i class="fa-solid fa-sun absolute left-4 text-yellow-500 text-sm"></i>
-          <i class="fa-solid fa-moon absolute right-4 text-slate-400 text-sm"></i>
-        </button>
-      </div>
-    </header>
+    <!-- ================= CONTENIDO ================= -->
+    <main class="max-w-6xl mx-auto px-6 py-10 space-y-10">
 
-    <!-- Progress + Stepper -->
-    <section data-animate class="opacity-0 translate-y-6 transition-all duration-700 delay-100">
-      <div class="grid gap-6 lg:grid-cols-3">
+        <!-- HEADER -->
+        <header class="flex items-center gap-4">
+            <div class="h-12 w-12 rounded-xl bg-black/40 border border-white/10 shadow-subtle
+                flex items-center justify-center">
+                <i class="fa-solid fa-microchip text-accent text-xl"></i>
+            </div>
 
-        <!-- Progress card -->
-        <div class="lg:col-span-2 bg-white/80 dark:bg-slate-800/70 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-700/60 shadow-soft p-7">
-          <div class="flex items-start justify-between gap-4">
             <div>
-              <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <i class="fa-solid fa-chart-line text-sky-600"></i> Progreso general
-              </h2>
-              <p class="text-sm text-slate-500 dark:text-slate-400 mt-1" id="progressText">
-                Cargando progreso…
-              </p>
+                <h1 class="text-xl md:text-2xl font-bold tracking-tight text-white">
+                    Seguimiento de Tesis
+                    <span class="text-accent font-semibold">· Ingeniería de Sistemas</span>
+                </h1>
+                <p class="text-sm text-slate-400">
+                    Panel académico de control y seguimiento
+                </p>
+            </div>
+        </header>
+
+        <!-- HERO -->
+        <section class="rounded-2xl bg-black/40 backdrop-blur border border-white/10 shadow-glass p-8">
+            <div class="grid md:grid-cols-3 gap-6 items-center">
+
+                <div class="md:col-span-2 space-y-3">
+                    <p class="text-xs uppercase tracking-widest text-slate-400">
+                        Estado general del proceso
+                    </p>
+
+                    <h2 id="estado" class="text-2xl md:text-3xl font-extrabold text-white">
+                        Cargando estado…
+                    </h2>
+
+
+
+                    <p id="estadoHumano" class="text-slate-300">
+                        Preparando información de seguimiento…
+                    </p>
+                </div>
+
+                <div class="rounded-xl bg-panelSoft border border-white/10 p-5 space-y-3">
+                    <div class="flex justify-between text-xs text-slate-400">
+                        <span>Progreso</span>
+                        <span id="progressPercent" class="font-semibold text-white">0%</span>
+                    </div>
+
+                    <div class="h-2 rounded-full bg-black overflow-hidden">
+                        <div id="progressBar"
+                            class="h-full w-0 rounded-full bg-gradient-to-r from-accent to-sky-500 transition-all duration-700">
+                        </div>
+                    </div>
+
+                    <p id="progressText" class="text-xs text-slate-400">
+                        Calculando avance…
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRID PRINCIPAL -->
+        <section class="grid gap-6 lg:grid-cols-3">
+
+            <!-- ESTADO -->
+            <div class="rounded-2xl bg-black/40 backdrop-blur border border-white/10 shadow-glass p-6 space-y-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-semibold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-accent"></i> Estado actual
+                    </h3>
+
+                    <span id="badgeEstado" class="px-4 py-1 rounded-full text-xs font-bold bg-slate-700 text-white">
+                        —
+                    </span>
+
+                    <span id="saludProyecto" class="px-4 py-1 rounded-full text-xs font-bold">—</span>
+
+                </div>
+
+                <p id="ultimaActualizacion" class="text-xs text-slate-400">
+                    —
+                </p>
+
+                <div id="alertaCambio"></div>
             </div>
 
-            <span id="progressPill"
-              class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide
-                     bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">
-              <i class="fa-solid fa-bolt"></i> En seguimiento
-            </span>
-          </div>
+            <!-- ETAPAS -->
+            <div class="rounded-2xl bg-black/40 backdrop-blur border border-white/10 shadow-glass p-6">
+                <h3 class="font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-flag-checkered text-accent"></i> Etapas del proceso
+                </h3>
 
-          <div class="mt-5">
-            <div class="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
-              <span>Avance</span>
-              <span class="font-semibold text-slate-900 dark:text-white" id="progressPercent">0%</span>
+                <ol id="stepper" class="space-y-3"></ol>
             </div>
 
-            <div class="mt-2 h-3 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
-              <div id="progressBar"
-                   class="h-full w-0 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 transition-all duration-700"></div>
+            <!-- KPIs -->
+            <div class="grid gap-6">
+                <!-- RESPONSABLE -->
+                <div class="rounded-2xl bg-black/40 backdrop-blur border border-white/10 shadow-glass p-6">
+                    <p class="text-xs uppercase tracking-widest text-slate-400">Responsable</p>
+                    <p id="kpiResponsable" class="mt-2 text-lg font-bold text-white">—</p>
+                    <p class="text-sm text-slate-400">Último movimiento</p>
+                </div>
+
+                <!-- INACTIVIDAD -->
+                <div class="rounded-2xl bg-black/40 backdrop-blur border border-white/10 shadow-glass p-6">
+                    <p class="text-xs uppercase tracking-widest text-slate-400">Inactividad</p>
+                    <p id="kpiInactividad" class="mt-2 text-lg font-bold text-white">—</p>
+                    <p class="text-sm text-slate-400">Desde última actualización</p>
+                </div>
+
+                <div class="rounded-2xl bg-black/40 backdrop-blur border border-white/10 shadow-glass p-6">
+                    <p class="text-xs uppercase tracking-widest text-slate-400">Última acción</p>
+                    <p id="kpiUltimaAccion" class="mt-2 text-lg font-bold text-white">—</p>
+                    <p id="kpiUltimaAccionSub" class="text-sm text-slate-400">—</p>
+                </div>
+
+                <div class="rounded-2xl bg-black/40 backdrop-blur border border-white/10 shadow-glass p-6">
+                    <p class="text-xs uppercase tracking-widest text-slate-400">Actividad total</p>
+                    <p id="kpiTotalCambios" class="mt-2 text-lg font-bold text-white">—</p>
+                    <p class="text-sm text-slate-400">Registros en historial</p>
+                </div>
             </div>
 
-            <p class="mt-3 text-sm text-slate-600 dark:text-slate-300" id="estadoHumano">
-              Preparando información del estado…
-            </p>
-          </div>
-        </div>
+            <!-- CHECKLIST REGLAMENTARIO -->
+            <div class="rounded-2xl bg-black/40 backdrop-blur border border-white/10 shadow-glass p-6">
+                <h3 class="font-semibold text-white mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-accent"></i>
+                    Checklist reglamentario
+                </h3>
 
-        <!-- Stepper card -->
-        <div class="bg-white/80 dark:bg-slate-800/70 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-700/60 shadow-soft p-7">
-          <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <i class="fa-solid fa-flag-checkered text-sky-600"></i> Etapas
-          </h2>
-
-          <ol id="stepper" class="mt-5 space-y-3">
-            <!-- JS pinta etapas -->
-          </ol>
-
-          <p class="mt-5 text-xs text-slate-500 dark:text-slate-400">
-            Tip: las etapas se marcan automáticamente según el estado actual.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Estado + KPIs -->
-    <section data-animate class="opacity-0 translate-y-6 transition-all duration-700 delay-200">
-      <div class="grid gap-6 lg:grid-cols-3">
-
-        <!-- Estado actual -->
-        <div class="lg:col-span-1 bg-white/80 dark:bg-slate-800/70 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-700/60 shadow-soft p-7">
-          <div class="flex items-center justify-between gap-3">
-            <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <i class="fa-solid fa-circle-info text-sky-600"></i> Estado actual
-            </h2>
-            <span id="badgeEstado" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-slate-600 text-white">
-              —
-            </span>
-          </div>
-
-          <h3 id="estado" class="mt-4 text-2xl font-extrabold text-slate-900 dark:text-white">
-            Cargando…
-          </h3>
-
-          <p id="ultimaActualizacion" class="mt-2 text-sm text-slate-500 dark:text-slate-400 flex items-center gap-2">
-            <i class="fa-regular fa-clock"></i> —
-          </p>
-
-          <div id="alertaCambio" class="mt-5"></div>
-        </div>
-
-        <!-- KPIs -->
-        <div class="lg:col-span-2 grid gap-6 sm:grid-cols-2">
-          <div class="bg-white/80 dark:bg-slate-800/70 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-700/60 shadow-soft p-7">
-            <div class="flex items-center justify-between">
-              <p class="text-sm text-slate-500 dark:text-slate-400">Última acción</p>
-              <i class="fa-solid fa-wand-magic-sparkles text-sky-600"></i>
+                <ul id="checklist" class="space-y-3 text-sm"></ul>
             </div>
-            <p id="kpiUltimaAccion" class="mt-2 text-lg font-bold text-slate-900 dark:text-white">—</p>
-            <p id="kpiUltimaAccionSub" class="mt-1 text-sm text-slate-500 dark:text-slate-400">—</p>
-          </div>
 
-          <div class="bg-white/80 dark:bg-slate-800/70 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-700/60 shadow-soft p-7">
-            <div class="flex items-center justify-between">
-              <p class="text-sm text-slate-500 dark:text-slate-400">Actividad</p>
-              <i class="fa-solid fa-wave-square text-sky-600"></i>
+
+        </section>
+
+        <!-- HISTORIAL -->
+        <section class="rounded-2xl bg-black/40 backdrop-blur border border-white/10 shadow-glass p-6">
+            <h3 class="font-semibold text-white mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-timeline text-accent"></i> Historial de cambios
+            </h3>
+
+            <div id="historial" class="relative pl-6 space-y-6 border-l border-white/10">
+                <!-- app.js -->
             </div>
-            <p id="kpiTotalCambios" class="mt-2 text-lg font-bold text-slate-900 dark:text-white">—</p>
-            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Total de registros en el historial</p>
-          </div>
+        </section>
 
-          <div class="bg-white/80 dark:bg-slate-800/70 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-700/60 shadow-soft p-7">
-            <div class="flex items-center justify-between">
-              <p class="text-sm text-slate-500 dark:text-slate-400">Responsable</p>
-              <i class="fa-solid fa-user-check text-sky-600"></i>
-            </div>
-            <p id="kpiResponsable" class="mt-2 text-lg font-bold text-slate-900 dark:text-white">—</p>
-            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Según último movimiento registrado</p>
-          </div>
+        <footer class="text-center text-xs text-slate-500 pt-6">
+            © 2025 Pedro García · Seguimiento de Tesis (Ing. de Sistemas)
+        </footer>
 
-          <div class="bg-white/80 dark:bg-slate-800/70 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-700/60 shadow-soft p-7">
-            <div class="flex items-center justify-between">
-              <p class="text-sm text-slate-500 dark:text-slate-400">Tiempo sin cambios</p>
-              <i class="fa-solid fa-hourglass-half text-sky-600"></i>
-            </div>
-            <p id="kpiInactividad" class="mt-2 text-lg font-bold text-slate-900 dark:text-white">—</p>
-            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Desde la última actualización</p>
-          </div>
-        </div>
+    </main>
 
-      </div>
-    </section>
-
-    <!-- Timeline -->
-    <section data-animate class="opacity-0 translate-y-6 transition-all duration-700 delay-300
-            bg-white/80 dark:bg-slate-800/70 backdrop-blur-xl rounded-3xl border border-white/40 dark:border-slate-700/60 shadow-soft p-7">
-      <div class="flex items-center justify-between gap-4">
-        <h2 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-          <i class="fa-solid fa-timeline text-sky-600"></i> Historial de cambios
-        </h2>
-        <span class="text-xs text-slate-500 dark:text-slate-400">
-          Entrada animada · modo oscuro listo
-        </span>
-      </div>
-
-      <div id="historial" class="mt-6 relative pl-10 space-y-7 border-l-2 border-dashed border-sky-300 dark:border-sky-700">
-        <!-- JS pinta items -->
-      </div>
-    </section>
-
-    <footer data-animate class="opacity-0 translate-y-6 transition-all duration-700 delay-400 text-center text-xs text-slate-500 dark:text-slate-400">
-      © 2025 Pedro García. Todos los derechos reservados.
-    </footer>
-
-  </main>
-
-  <script src="ui.js"></script>
-  <script src="app.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
