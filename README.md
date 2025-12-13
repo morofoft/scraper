@@ -1,11 +1,9 @@
-# 📘 Sistema de Seguimiento de Tesis  
+# Sistema de Seguimiento de Tesis  
 ### Ingeniería de Sistemas – Panel Académico de Control y Seguimiento
 
 Sistema web **dark-only**, moderno y académico para el **seguimiento del proceso de trabajos de grado** (tesis), alineado con el **reglamento institucional**, enfocado en **control de estados, cumplimiento de requisitos y trazabilidad**.
 
----
-
-## 🧠 Descripción General
+## Descripción General
 
 Este proyecto implementa un **sistema de seguimiento académico** que permite visualizar, analizar y controlar el avance de una tesis de Ingeniería de Sistemas a través de:
 
@@ -18,9 +16,7 @@ Este proyecto implementa un **sistema de seguimiento académico** que permite vi
 
 El sistema consume datos desde un archivo JSON generado por un scraper externo y **no requiere backend propio**, lo que lo hace ideal como **proyecto académico, demostrativo y escalable**.
 
----
-
-## 🎯 Objetivos del Sistema
+## Objetivos del Sistema
 
 ### Objetivo General
 Desarrollar un sistema web que permita dar seguimiento estructurado y normativo al proceso de trabajos de grado, garantizando el cumplimiento del reglamento académico.
@@ -32,9 +28,7 @@ Desarrollar un sistema web que permita dar seguimiento estructurado y normativo 
 - Ofrecer indicadores claros para toma de decisiones
 - Mantener trazabilidad completa del proceso
 
----
-
-## ⚙️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 | Tecnología | Uso |
 |-----------|-----|
@@ -45,9 +39,7 @@ Desarrollar un sistema web que permita dar seguimiento estructurado y normativo 
 | **GitHub Raw JSON** | Fuente de datos |
 | **LocalStorage** | Persistencia de estado previo |
 
----
-
-## 🧩 Arquitectura del Sistema
+## Arquitectura del Sistema
 
 Frontend (HTML + Tailwind)
 |
@@ -57,49 +49,19 @@ app.js (Lógica académica)
 v
 datos_issue.json (Fuente de datos)
 
-
 - No existe dependencia de backend
 - Arquitectura **desacoplada**
 - Escalable a API o base de datos en el futuro
 
----
-
-## 📂 Estructura del Proyecto
-
-/
-├── index.html # Vista principal del sistema
-├── app.js # Lógica académica y renderizado
-├── ui.js # Animaciones y parallax (opcional)
-├── README.md # Documentación del proyecto
-
-
----
-
-## 🧠 Estados Formales del Proceso
+## Estados Formales del Proceso
 
 El sistema **no utiliza estados genéricos**, sino **estados académicos formales**, por ejemplo:
 
-- Tema creado
-- Tema enviado
-- Tema comentado
-- Tema aprobado
-- Anteproyecto creado
-- Anteproyecto enviado
-- Anteproyecto comentado
-- Anteproyecto aprobado
-- Tesis en desarrollo
-- Tesis enviada a jurado
-- Tesis aprobada
+- Tema creado | enviado | comentado | aprobado
+- Anteproyecto creado | enviado | comentado | aprobado
+- Tesis en desarrollo | enviada a jurado | aprobada
 
-Cada estado posee:
-- Etapa académica
-- Porcentaje de avance
-- Color institucional
-- Interpretación académica
-
----
-
-## 🧭 Etapas del Proceso
+## Etapas del Proceso
 
 Las etapas generales del proceso son:
 
@@ -111,9 +73,7 @@ Las etapas generales del proceso son:
 
 Estas se visualizan como un **pipeline académico**, marcando la etapa actual.
 
----
-
-## 📊 Indicadores Académicos (KPIs)
+## Indicadores Académicos (KPIs)
 
 El sistema calcula automáticamente:
 
@@ -123,9 +83,7 @@ El sistema calcula automáticamente:
 - **Inactividad del proyecto**
 - **Cantidad total de registros en historial**
 
----
-
-## 🚦 Indicador de Salud del Proyecto
+## Indicador de Salud del Proyecto
 
 Basado en la **inactividad del proceso**, el sistema clasifica el estado del proyecto como:
 
@@ -137,25 +95,7 @@ Basado en la **inactividad del proceso**, el sistema clasifica el estado del pro
 
 Este indicador permite identificar riesgos académicos tempranos.
 
----
-
-## ✅ Checklist Reglamentario
-
-El sistema incluye un **checklist automático**, basado en el reglamento institucional:
-
-- Tema creado
-- Tema aprobado
-- Anteproyecto creado
-- Anteproyecto enviado
-- Anteproyecto aprobado
-- Documentos requeridos cargados
-- Historial de revisiones disponible
-
-El checklist se genera **dinámicamente** a partir del estado actual y el historial.
-
----
-
-## 🕒 Historial de Cambios
+## Historial de Cambios
 
 Cada modificación del proceso queda registrada con:
 
@@ -166,9 +106,8 @@ Cada modificación del proceso queda registrada con:
 
 Esto garantiza **trazabilidad completa**, requerida por el reglamento académico.
 
----
 
-## 🎨 Diseño y UX
+## Diseño y UX
 
 - **Modo oscuro único** (dark-only)
 - Estilo institucional y tecnológico
@@ -177,9 +116,7 @@ Esto garantiza **trazabilidad completa**, requerida por el reglamento académico
 - Interfaz limpia y profesional
 - Enfoque académico (no decorativo)
 
----
-
-## 🧪 Fuente de Datos
+## Fuente de Datos
 
 El sistema consume datos desde un archivo JSON con la siguiente estructura:
 
@@ -189,42 +126,30 @@ El sistema consume datos desde un archivo JSON con la siguiente estructura:
   "estado_actual": "Anteproyecto Enviado",
   "historial": []
 }
-
+```
 Esto permite integrar fácilmente:
 
-Scrapers
-
-APIs
-
-Backends futuros
-
-📈 Escalabilidad Futura
+- Scrapers
+- APIs
+- Backends futuros
+- Escalabilidad Futura
 
 Este sistema está preparado para evolucionar hacia:
+- Validación de transiciones de estado
+- Control de cronograma académico
+- Gestión de jurado y defensa
+- Exportación de informes PDF
+- Integración con bases de datos
+- Autenticación por roles (Tutor / Estudiante)
 
-Validación de transiciones de estado
-
-Control de cronograma académico
-
-Gestión de jurado y defensa
-
-Exportación de informes PDF
-
-Integración con bases de datos
-
-Autenticación por roles (Tutor / Estudiante)
-
-👨‍💻 Autor
-
+## Autor
 Pedro García
 Ingeniero de Sistemas
 Proyecto académico – Sistema de Seguimiento de Tesis
 
-📜 Licencia
-
+## Licencia
 Proyecto con fines académicos y educativos.
 Uso libre para aprendizaje, demostración y mejora.
 
-⭐ Conclusión
-
+## Conclusión
 Este proyecto no es solo un dashboard visual, sino un Sistema de Gestión Académica, diseñado bajo principios de ingeniería de sistemas, normativa institucional y buenas prácticas de desarrollo web moderno.
