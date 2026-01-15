@@ -1,6 +1,6 @@
 {
-    "actualizado": "2026-01-15 15:37:32 UTC",
-    "estado_actual": "Trabajo Enviado al Asesor",
+    "actualizado": "2026-01-15 16:02:24 UTC",
+    "estado_actual": "Anteproyecto Aceptado",
     "historial": [
         {
             "numero": "#1",
@@ -98,6 +98,15 @@
             "cambios": [
                 "Estado cambiado de Anteproyecto Aceptado a Trabajo Enviado al Asesor",
                 "% Realizado cambiado de 60 a 70"
+            ]
+        },
+        {
+            "numero": "#12",
+            "usuario": "23 minutos",
+            "fecha": "15 Enero 2026 11:39 AM",
+            "cambios": [
+                "Estado cambiado de Trabajo Enviado al Asesor a Anteproyecto Aceptado",
+                "% Realizado cambiado de 70 a 60"
             ]
         }
     ]
