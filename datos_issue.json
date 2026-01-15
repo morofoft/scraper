@@ -1,6 +1,6 @@
 {
-    "actualizado": "2025-12-12 17:52:46",
-    "estado_actual": "Anteproyecto Enviado",
+    "actualizado": "2026-01-15 10:12:20 UTC",
+    "estado_actual": "Trabajo Enviado al Asesor",
     "historial": [
         {
             "numero": "#1",
@@ -21,7 +21,7 @@
         },
         {
             "numero": "#3",
-            "usuario": "16 días",
+            "usuario": "alrededor de 2 meses",
             "fecha": "26 Noviembre 2025 03:50 PM",
             "cambios": [
                 "Asignado a establecido a JUAN FRANCISCO MEDINA ALCANTARA"
@@ -29,7 +29,7 @@
         },
         {
             "numero": "#4",
-            "usuario": "15 días",
+            "usuario": "alrededor de 2 meses",
             "fecha": "27 Noviembre 2025 03:18 PM",
             "cambios": [
                 "Añadido Fichero Reglamento de trabajos de Grado versión final v1.6.docx Reglamento de trabajos de Grado versión final v1.6.docx",
@@ -38,7 +38,7 @@
         },
         {
             "numero": "#5",
-            "usuario": "alrededor de 15 horas",
+            "usuario": "alrededor de 1 mes",
             "fecha": "11 Diciembre 2025 11:18 PM",
             "cambios": [
                 "Añadido Fichero Anteproyecto_Pacas Torres import.docx Anteproyecto_Pacas Torres import.docx",
@@ -47,7 +47,7 @@
         },
         {
             "numero": "#6",
-            "usuario": "alrededor de 15 horas",
+            "usuario": "alrededor de 1 mes",
             "fecha": "11 Diciembre 2025 11:19 PM",
             "cambios": [
                 "Añadido Fichero Anteproyecto_Pacas Torres import.docx Anteproyecto_Pacas Torres import.docx",
@@ -72,6 +72,32 @@
             "cambios": [
                 "Estado cambiado de Anteproyecto Creado a Anteproyecto Enviado",
                 "% Realizado cambiado de 40 a 50"
+            ]
+        },
+        {
+            "numero": "#9",
+            "usuario": "18 días",
+            "fecha": "28 Diciembre 2025 01:32 AM",
+            "cambios": [
+                "Estado cambiado de Anteproyecto Enviado a Anteproyecto Comentado"
+            ]
+        },
+        {
+            "numero": "#10",
+            "usuario": "18 días",
+            "fecha": "28 Diciembre 2025 01:32 AM",
+            "cambios": [
+                "Estado cambiado de Anteproyecto Comentado a Anteproyecto Aceptado",
+                "% Realizado cambiado de 50 a 60"
+            ]
+        },
+        {
+            "numero": "#11",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "15 Enero 2026 12:15 AM",
+            "cambios": [
+                "Estado cambiado de Anteproyecto Aceptado a Trabajo Enviado al Asesor",
+                "% Realizado cambiado de 60 a 70"
             ]
         }
     ]
