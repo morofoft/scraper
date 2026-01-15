@@ -7,7 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-REDMINE_SCHEME = os.getenv("REDMINE_SCHEME", "https")
+REDMINE_SCHEME = os.getenv("REDMINE_SCHEME", "http")
 BASE_REDIRECTION = os.getenv(
     "REDMINE_BASE_URL", "gestiontrabajos.uce.edu.do:82/redmine"
 )
