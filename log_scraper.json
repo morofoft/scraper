@@ -1690,5 +1690,14 @@
             "estado": "Anteproyecto Aceptado",
             "historial_items": 12
         }
+    },
+    {
+        "fecha": "2026-01-18 20:47:22 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Anteproyecto Aceptado",
+            "historial_items": 12
+        }
     }
 ]
