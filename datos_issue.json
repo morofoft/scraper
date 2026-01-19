@@ -1,6 +1,6 @@
 {
-    "actualizado": "2026-01-19 23:12:26 UTC",
-    "estado_actual": "Anteproyecto Aceptado",
+    "actualizado": "2026-01-19 23:34:44 UTC",
+    "estado_actual": "Trabajo Enviado al Asesor",
     "historial": [
         {
             "numero": "#1",
@@ -126,6 +126,23 @@
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Anteproyecto Aceptado",
                 "% Realizado cambiado de 70 a 60"
+            ]
+        },
+        {
+            "numero": "#15",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "19 Enero 2026 07:31 PM",
+            "cambios": [
+                "Se actualizó Documento de Tesis"
+            ]
+        },
+        {
+            "numero": "#16",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "19 Enero 2026 07:31 PM",
+            "cambios": [
+                "Estado cambiado de Anteproyecto Aceptado a Trabajo Enviado al Asesor",
+                "% Realizado cambiado de 60 a 70"
             ]
         }
     ]
