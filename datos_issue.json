@@ -1,6 +1,6 @@
 {
-    "actualizado": "2026-01-19 17:52:08 UTC",
-    "estado_actual": "Anteproyecto Aceptado",
+    "actualizado": "2026-01-19 18:26:12 UTC",
+    "estado_actual": "Trabajo Enviado al Asesor",
     "historial": [
         {
             "numero": "#1",
@@ -107,6 +107,16 @@
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Anteproyecto Aceptado",
                 "% Realizado cambiado de 70 a 60"
+            ]
+        },
+        {
+            "numero": "#13",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "19 Enero 2026 01:52 PM",
+            "cambios": [
+                "Estado cambiado de Anteproyecto Aceptado a Trabajo Enviado al Asesor",
+                "% Realizado cambiado de 60 a 70",
+                "Se actualizó Comprobante de pago"
             ]
         }
     ]
