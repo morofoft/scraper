@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-20 13:09:50 UTC",
+    "actualizado": "2026-01-20 13:56:15 UTC",
     "estado_actual": "Trabajo Enviado al Asesor",
     "historial": [
         {
@@ -143,6 +143,14 @@
             "cambios": [
                 "Estado cambiado de Anteproyecto Aceptado a Trabajo Enviado al Asesor",
                 "% Realizado cambiado de 60 a 70"
+            ]
+        },
+        {
+            "numero": "#17",
+            "usuario": "24 minutos",
+            "fecha": "20 Enero 2026 09:31 AM",
+            "cambios": [
+                "Asignado a cambiado de JUAN FRANCISCO MEDINA ALCANTARA a JOSE ANGILBERTO MARQUEZ JAVIER"
             ]
         }
     ]
