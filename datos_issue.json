@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-21 16:18:51 UTC",
+    "actualizado": "2026-01-21 17:32:39 UTC",
     "estado_actual": "Trabajo Enviado al Asesor",
     "historial": [
         {
@@ -76,7 +76,7 @@
         },
         {
             "numero": "#9",
-            "usuario": "24 días",
+            "usuario": "25 días",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Enviado a Anteproyecto Comentado"
@@ -84,7 +84,7 @@
         },
         {
             "numero": "#10",
-            "usuario": "24 días",
+            "usuario": "25 días",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Comentado a Anteproyecto Aceptado",
