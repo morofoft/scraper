@@ -3175,5 +3175,14 @@
             "estado": "Trabajo Enviado al Asesor",
             "historial_items": 19
         }
+    },
+    {
+        "fecha": "2026-01-22 21:58:54 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo Enviado al Asesor",
+            "historial_items": 19
+        }
     }
 ]
