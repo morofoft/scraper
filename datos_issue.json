@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-22 21:22:51 UTC",
+    "actualizado": "2026-01-22 21:45:25 UTC",
     "estado_actual": "Trabajo Enviado al Asesor",
     "historial": [
         {
@@ -155,10 +155,18 @@
         },
         {
             "numero": "#19",
-            "usuario": "43 minutos",
+            "usuario": "alrededor de 1 hora",
             "fecha": "22 Enero 2026 04:39 PM",
             "cambios": [
                 "Asignado a cambiado de JOSE ANGILBERTO MARQUEZ JAVIER a Jose Marquez Javier"
+            ]
+        },
+        {
+            "numero": "#20",
+            "usuario": "14 minutos",
+            "fecha": "22 Enero 2026 05:31 PM",
+            "cambios": [
+                "Asesor cambiado de JOSE ANGILBERTO MARQUEZ JAVIER a Jose Marquez Javier"
             ]
         }
     ]
