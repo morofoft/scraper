@@ -3220,5 +3220,14 @@
             "estado": "Trabajo Revisado",
             "historial_items": 20
         }
+    },
+    {
+        "fecha": "2026-01-22 23:53:47 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo Revisado",
+            "historial_items": 20
+        }
     }
 ]
