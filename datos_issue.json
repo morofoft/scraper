@@ -1,6 +1,6 @@
 {
-    "actualizado": "2026-01-23 01:46:26 UTC",
-    "estado_actual": "Trabajo Revisado",
+    "actualizado": "2026-01-23 03:23:43 UTC",
+    "estado_actual": "Trabajo enviado a Registro",
     "historial": [
         {
             "numero": "#1",
@@ -155,7 +155,7 @@
         },
         {
             "numero": "#19",
-            "usuario": "alrededor de 5 horas",
+            "usuario": "alrededor de 7 horas",
             "fecha": "22 Enero 2026 04:39 PM",
             "cambios": [
                 "Asignado a cambiado de JOSE ANGILBERTO MARQUEZ JAVIER a Jose Marquez Javier"
@@ -163,7 +163,7 @@
         },
         {
             "numero": "#20",
-            "usuario": "alrededor de 4 horas",
+            "usuario": "alrededor de 6 horas",
             "fecha": "22 Enero 2026 05:31 PM",
             "cambios": [
                 "Asesor cambiado de JOSE ANGILBERTO MARQUEZ JAVIER a Jose Marquez Javier"
@@ -171,11 +171,20 @@
         },
         {
             "numero": "#21",
-            "usuario": "alrededor de 2 horas",
+            "usuario": "alrededor de 4 horas",
             "fecha": "22 Enero 2026 07:31 PM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Trabajo Revisado",
                 "% Realizado cambiado de 70 a 80"
+            ]
+        },
+        {
+            "numero": "#22",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "22 Enero 2026 11:11 PM",
+            "cambios": [
+                "Estado cambiado de Trabajo Revisado a Trabajo enviado a Registro",
+                "% Realizado cambiado de 80 a 90"
             ]
         }
     ]

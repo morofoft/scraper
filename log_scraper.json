@@ -3238,5 +3238,14 @@
             "estado": "Trabajo Revisado",
             "historial_items": 20
         }
+    },
+    {
+        "fecha": "2026-01-23 03:23:43 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo enviado a Registro",
+            "historial_items": 21
+        }
     }
 ]
