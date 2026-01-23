@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-23 17:15:43 UTC",
+    "actualizado": "2026-01-23 17:42:20 UTC",
     "estado_actual": "Trabajo enviado a Registro",
     "historial": [
         {
@@ -76,7 +76,7 @@
         },
         {
             "numero": "#9",
-            "usuario": "26 días",
+            "usuario": "27 días",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Enviado a Anteproyecto Comentado"
@@ -84,7 +84,7 @@
         },
         {
             "numero": "#10",
-            "usuario": "26 días",
+            "usuario": "27 días",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Comentado a Anteproyecto Aceptado",
