@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-23 07:54:48 UTC",
+    "actualizado": "2026-01-23 08:34:33 UTC",
     "estado_actual": "Trabajo enviado a Registro",
     "historial": [
         {
@@ -121,7 +121,7 @@
         },
         {
             "numero": "#14",
-            "usuario": "3 días",
+            "usuario": "4 días",
             "fecha": "19 Enero 2026 04:31 PM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Anteproyecto Aceptado",
@@ -155,7 +155,7 @@
         },
         {
             "numero": "#19",
-            "usuario": "alrededor de 11 horas",
+            "usuario": "alrededor de 12 horas",
             "fecha": "22 Enero 2026 04:39 PM",
             "cambios": [
                 "Asignado a cambiado de JOSE ANGILBERTO MARQUEZ JAVIER a Jose Marquez Javier"
@@ -163,7 +163,7 @@
         },
         {
             "numero": "#20",
-            "usuario": "alrededor de 10 horas",
+            "usuario": "alrededor de 11 horas",
             "fecha": "22 Enero 2026 05:31 PM",
             "cambios": [
                 "Asesor cambiado de JOSE ANGILBERTO MARQUEZ JAVIER a Jose Marquez Javier"
@@ -171,7 +171,7 @@
         },
         {
             "numero": "#21",
-            "usuario": "alrededor de 8 horas",
+            "usuario": "alrededor de 9 horas",
             "fecha": "22 Enero 2026 07:31 PM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Trabajo Revisado",
