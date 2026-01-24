@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-24 15:18:39 UTC",
+    "actualizado": "2026-01-24 15:38:38 UTC",
     "estado_actual": "Trabajo Certificado",
     "historial": [
         {
@@ -163,7 +163,7 @@
         },
         {
             "numero": "#20",
-            "usuario": "1 día",
+            "usuario": "2 días",
             "fecha": "22 Enero 2026 05:31 PM",
             "cambios": [
                 "Asesor cambiado de JOSE ANGILBERTO MARQUEZ JAVIER a Jose Marquez Javier"
@@ -189,7 +189,7 @@
         },
         {
             "numero": "#23",
-            "usuario": "alrededor de 10 horas",
+            "usuario": "alrededor de 11 horas",
             "fecha": "24 Enero 2026 01:08 AM",
             "cambios": [
                 "Estado cambiado de Trabajo enviado a Registro a Trabajo Certificado"
