@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-24 20:34:39 UTC",
+    "actualizado": "2026-01-24 20:49:47 UTC",
     "estado_actual": "Trabajo Certificado",
     "historial": [
         {
@@ -189,7 +189,7 @@
         },
         {
             "numero": "#23",
-            "usuario": "alrededor de 15 horas",
+            "usuario": "alrededor de 16 horas",
             "fecha": "24 Enero 2026 01:08 AM",
             "cambios": [
                 "Estado cambiado de Trabajo enviado a Registro a Trabajo Certificado"
