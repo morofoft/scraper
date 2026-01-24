@@ -1,6 +1,6 @@
 {
-    "actualizado": "2026-01-24 04:54:08 UTC",
-    "estado_actual": "Trabajo enviado a Registro",
+    "actualizado": "2026-01-24 05:22:39 UTC",
+    "estado_actual": "Trabajo Certificado",
     "historial": [
         {
             "numero": "#1",
@@ -185,6 +185,14 @@
             "cambios": [
                 "Estado cambiado de Trabajo Revisado a Trabajo enviado a Registro",
                 "% Realizado cambiado de 80 a 90"
+            ]
+        },
+        {
+            "numero": "#23",
+            "usuario": "14 minutos",
+            "fecha": "24 Enero 2026 01:08 AM",
+            "cambios": [
+                "Estado cambiado de Trabajo enviado a Registro a Trabajo Certificado"
             ]
         }
     ]
