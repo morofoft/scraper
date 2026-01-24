@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-24 17:27:01 UTC",
+    "actualizado": "2026-01-24 17:44:26 UTC",
     "estado_actual": "Trabajo Certificado",
     "historial": [
         {
@@ -76,7 +76,7 @@
         },
         {
             "numero": "#9",
-            "usuario": "27 días",
+            "usuario": "28 días",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Enviado a Anteproyecto Comentado"
@@ -84,7 +84,7 @@
         },
         {
             "numero": "#10",
-            "usuario": "27 días",
+            "usuario": "28 días",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Comentado a Anteproyecto Aceptado",
@@ -171,7 +171,7 @@
         },
         {
             "numero": "#21",
-            "usuario": "1 día",
+            "usuario": "2 días",
             "fecha": "22 Enero 2026 07:31 PM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Trabajo Revisado",
@@ -189,7 +189,7 @@
         },
         {
             "numero": "#23",
-            "usuario": "alrededor de 12 horas",
+            "usuario": "alrededor de 13 horas",
             "fecha": "24 Enero 2026 01:08 AM",
             "cambios": [
                 "Estado cambiado de Trabajo enviado a Registro a Trabajo Certificado"
