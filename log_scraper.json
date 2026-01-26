@@ -4660,5 +4660,14 @@
             "estado": "Trabajo Certificado",
             "historial_items": 22
         }
+    },
+    {
+        "fecha": "2026-01-26 05:46:04 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo sin deudas",
+            "historial_items": 23
+        }
     }
 ]
