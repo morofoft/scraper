@@ -4786,5 +4786,14 @@
             "estado": "Trabajo sin deudas",
             "historial_items": 23
         }
+    },
+    {
+        "fecha": "2026-01-26 13:07:33 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo sin deudas",
+            "historial_items": 23
+        }
     }
 ]
