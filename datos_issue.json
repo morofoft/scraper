@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-27 05:03:02 UTC",
+    "actualizado": "2026-01-27 05:40:47 UTC",
     "estado_actual": "Trabajo sin deudas",
     "historial": [
         {
@@ -76,7 +76,7 @@
         },
         {
             "numero": "#9",
-            "usuario": "30 días",
+            "usuario": "alrededor de 1 mes",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Enviado a Anteproyecto Comentado"
@@ -84,7 +84,7 @@
         },
         {
             "numero": "#10",
-            "usuario": "30 días",
+            "usuario": "alrededor de 1 mes",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Comentado a Anteproyecto Aceptado",
@@ -197,7 +197,7 @@
         },
         {
             "numero": "#24",
-            "usuario": "alrededor de 24 horas",
+            "usuario": "1 día",
             "fecha": "26 Enero 2026 01:11 AM",
             "cambios": [
                 "Estado cambiado de Trabajo Certificado a Trabajo sin deudas"
