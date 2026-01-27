@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-27 11:24:05 UTC",
+    "actualizado": "2026-01-27 11:45:36 UTC",
     "estado_actual": "Trabajo sin deudas",
     "historial": [
         {
@@ -171,7 +171,7 @@
         },
         {
             "numero": "#21",
-            "usuario": "4 días",
+            "usuario": "5 días",
             "fecha": "22 Enero 2026 07:31 PM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Trabajo Revisado",
