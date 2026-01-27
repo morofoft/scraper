@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-27 16:42:08 UTC",
+    "actualizado": "2026-01-27 17:14:55 UTC",
     "estado_actual": "Trabajo sin deudas",
     "historial": [
         {
@@ -189,7 +189,7 @@
         },
         {
             "numero": "#23",
-            "usuario": "3 días",
+            "usuario": "4 días",
             "fecha": "24 Enero 2026 01:08 AM",
             "cambios": [
                 "Estado cambiado de Trabajo enviado a Registro a Trabajo Certificado"
