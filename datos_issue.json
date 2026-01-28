@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-01-28 14:03:11 UTC",
+    "actualizado": "2026-01-28 14:48:10 UTC",
     "estado_actual": "Trabajo sin deudas",
     "historial": [
         {
@@ -201,6 +201,17 @@
             "fecha": "26 Enero 2026 01:11 AM",
             "cambios": [
                 "Estado cambiado de Trabajo Certificado a Trabajo sin deudas"
+            ]
+        },
+        {
+            "numero": "#25",
+            "usuario": "24 minutos",
+            "fecha": "28 Enero 2026 10:24 AM",
+            "cambios": [
+                "Fecha fin establecido a 30 Enero 2026",
+                "Asignado a cambiado de Jose Marquez Javier a ALBA NURIS BELTRE LEBRON DE DE LA ROSA",
+                "Jurado 1 establecido a ALBA NURIS BELTRE LEBRON DE DE LA ROSA",
+                "Jurado 2 establecido a MARY JACQUELINE CORCINO GALVA"
             ]
         }
     ]
