@@ -1,6 +1,6 @@
 {
-    "actualizado": "2026-02-01 23:52:12 UTC",
-    "estado_actual": "Trabajo sin deudas",
+    "actualizado": "2026-02-02 01:51:39 UTC",
+    "estado_actual": "Trabajo Comentado",
     "historial": [
         {
             "numero": "#1",
@@ -147,7 +147,7 @@
         },
         {
             "numero": "#17",
-            "usuario": "12 días",
+            "usuario": "13 días",
             "fecha": "20 Enero 2026 09:31 AM",
             "cambios": [
                 "Asignado a cambiado de JUAN FRANCISCO MEDINA ALCANTARA a JOSE ANGILBERTO MARQUEZ JAVIER"
@@ -212,6 +212,14 @@
                 "Asignado a cambiado de Jose Marquez Javier a ALBA NURIS BELTRE LEBRON DE DE LA ROSA",
                 "Jurado 1 establecido a ALBA NURIS BELTRE LEBRON DE DE LA ROSA",
                 "Jurado 2 establecido a MARY JACQUELINE CORCINO GALVA"
+            ]
+        },
+        {
+            "numero": "#26",
+            "usuario": "11 minutos",
+            "fecha": "01 Febrero 2026 09:40 PM",
+            "cambios": [
+                "Estado cambiado de Trabajo sin deudas a Trabajo Comentado"
             ]
         }
     ]
