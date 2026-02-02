@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-02-02 01:51:39 UTC",
+    "actualizado": "2026-02-02 04:19:03 UTC",
     "estado_actual": "Trabajo Comentado",
     "historial": [
         {
@@ -102,7 +102,7 @@
         },
         {
             "numero": "#12",
-            "usuario": "17 días",
+            "usuario": "18 días",
             "fecha": "15 Enero 2026 11:39 AM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Anteproyecto Aceptado",
@@ -205,7 +205,7 @@
         },
         {
             "numero": "#25",
-            "usuario": "4 días",
+            "usuario": "5 días",
             "fecha": "28 Enero 2026 10:24 AM",
             "cambios": [
                 "Fecha fin establecido a 30 Enero 2026",
@@ -216,7 +216,7 @@
         },
         {
             "numero": "#26",
-            "usuario": "11 minutos",
+            "usuario": "alrededor de 3 horas",
             "fecha": "01 Febrero 2026 09:40 PM",
             "cambios": [
                 "Estado cambiado de Trabajo sin deudas a Trabajo Comentado"
