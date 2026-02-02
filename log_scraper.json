@@ -7153,5 +7153,14 @@
             "estado": "Trabajo Comentado",
             "historial_items": 25
         }
+    },
+    {
+        "fecha": "2026-02-02 17:38:19 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo Comentado",
+            "historial_items": 25
+        }
     }
 ]
