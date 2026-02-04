@@ -1,6 +1,6 @@
 {
-    "actualizado": "2026-02-04 00:01:20 UTC",
-    "estado_actual": "Trabajo Comentado",
+    "actualizado": "2026-02-04 02:49:41 UTC",
+    "estado_actual": "Trabajo Enviado",
     "historial": [
         {
             "numero": "#1",
@@ -147,7 +147,7 @@
         },
         {
             "numero": "#17",
-            "usuario": "14 días",
+            "usuario": "15 días",
             "fecha": "20 Enero 2026 09:31 AM",
             "cambios": [
                 "Asignado a cambiado de JUAN FRANCISCO MEDINA ALCANTARA a JOSE ANGILBERTO MARQUEZ JAVIER"
@@ -205,7 +205,7 @@
         },
         {
             "numero": "#25",
-            "usuario": "6 días",
+            "usuario": "7 días",
             "fecha": "28 Enero 2026 10:24 AM",
             "cambios": [
                 "Fecha fin establecido a 30 Enero 2026",
@@ -220,6 +220,22 @@
             "fecha": "01 Febrero 2026 09:40 PM",
             "cambios": [
                 "Estado cambiado de Trabajo sin deudas a Trabajo Comentado"
+            ]
+        },
+        {
+            "numero": "#27",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "03 Febrero 2026 09:07 PM",
+            "cambios": [
+                "Se actualizó Trabajo Corregido"
+            ]
+        },
+        {
+            "numero": "#28",
+            "usuario": "RANDY TORRES PEREZ",
+            "fecha": "03 Febrero 2026 09:08 PM",
+            "cambios": [
+                "Estado cambiado de Trabajo Comentado a Trabajo Enviado"
             ]
         }
     ]
