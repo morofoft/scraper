@@ -7558,5 +7558,14 @@
             "estado": "Trabajo Enviado",
             "historial_items": 27
         }
+    },
+    {
+        "fecha": "2026-02-04 15:02:46 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo Enviado",
+            "historial_items": 27
+        }
     }
 ]
