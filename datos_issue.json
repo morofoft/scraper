@@ -1,6 +1,6 @@
 {
-    "actualizado": "2026-02-06 16:38:35 UTC",
-    "estado_actual": "Trabajo Enviado",
+    "actualizado": "2026-02-06 17:26:56 UTC",
+    "estado_actual": "Trabajo Evaluado",
     "historial": [
         {
             "numero": "#1",
@@ -189,7 +189,7 @@
         },
         {
             "numero": "#23",
-            "usuario": "13 días",
+            "usuario": "14 días",
             "fecha": "24 Enero 2026 01:08 AM",
             "cambios": [
                 "Estado cambiado de Trabajo enviado a Registro a Trabajo Certificado"
@@ -197,7 +197,7 @@
         },
         {
             "numero": "#24",
-            "usuario": "11 días",
+            "usuario": "12 días",
             "fecha": "26 Enero 2026 01:11 AM",
             "cambios": [
                 "Estado cambiado de Trabajo Certificado a Trabajo sin deudas"
@@ -260,6 +260,16 @@
             "fecha": "06 Febrero 2026 09:39 AM",
             "cambios": [
                 "Estado cambiado de Trabajo Comentado a Trabajo Enviado"
+            ]
+        },
+        {
+            "numero": "#32",
+            "usuario": "38 minutos",
+            "fecha": "06 Febrero 2026 12:48 PM",
+            "cambios": [
+                "Estado cambiado de Trabajo Enviado a Trabajo Evaluado",
+                "% Realizado cambiado de 90 a 100",
+                "Nota Final del Autor cambiado de 0 a 90"
             ]
         }
     ]
