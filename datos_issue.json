@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-02-08 08:20:23 UTC",
+    "actualizado": "2026-02-08 08:54:35 UTC",
     "estado_actual": "Trabajo Evaluado",
     "historial": [
         {
@@ -121,7 +121,7 @@
         },
         {
             "numero": "#14",
-            "usuario": "19 días",
+            "usuario": "20 días",
             "fecha": "19 Enero 2026 04:31 PM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Anteproyecto Aceptado",
@@ -155,7 +155,7 @@
         },
         {
             "numero": "#19",
-            "usuario": "16 días",
+            "usuario": "17 días",
             "fecha": "22 Enero 2026 04:39 PM",
             "cambios": [
                 "Asignado a cambiado de JOSE ANGILBERTO MARQUEZ JAVIER a Jose Marquez Javier"
