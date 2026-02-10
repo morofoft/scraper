@@ -9187,5 +9187,14 @@
             "estado": "Trabajo Evaluado",
             "historial_items": 31
         }
+    },
+    {
+        "fecha": "2026-02-10 20:31:00 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo Evaluado",
+            "historial_items": 31
+        }
     }
 ]
