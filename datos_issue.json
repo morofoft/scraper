@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-02-12 02:55:02 UTC",
+    "actualizado": "2026-02-12 05:01:02 UTC",
     "estado_actual": "Trabajo Evaluado",
     "historial": [
         {
@@ -102,7 +102,7 @@
         },
         {
             "numero": "#12",
-            "usuario": "27 días",
+            "usuario": "28 días",
             "fecha": "15 Enero 2026 11:39 AM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Anteproyecto Aceptado",
@@ -264,7 +264,7 @@
         },
         {
             "numero": "#32",
-            "usuario": "5 días",
+            "usuario": "6 días",
             "fecha": "06 Febrero 2026 12:48 PM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado a Trabajo Evaluado",
