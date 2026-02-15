@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-02-15 13:06:20 UTC",
+    "actualizado": "2026-02-15 13:52:29 UTC",
     "estado_actual": "Trabajo Evaluado",
     "historial": [
         {
@@ -216,7 +216,7 @@
         },
         {
             "numero": "#26",
-            "usuario": "13 días",
+            "usuario": "14 días",
             "fecha": "01 Febrero 2026 09:40 PM",
             "cambios": [
                 "Estado cambiado de Trabajo sin deudas a Trabajo Comentado"
