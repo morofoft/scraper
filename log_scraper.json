@@ -11851,5 +11851,14 @@
             "estado": "Trabajo Evaluado",
             "historial_items": 31
         }
+    },
+    {
+        "fecha": "2026-02-21 10:38:14 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo Evaluado",
+            "historial_items": 31
+        }
     }
 ]
