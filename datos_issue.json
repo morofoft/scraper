@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-02-26 04:43:38 UTC",
+    "actualizado": "2026-02-26 05:46:08 UTC",
     "estado_actual": "Trabajo Evaluado",
     "historial": [
         {
@@ -76,7 +76,7 @@
         },
         {
             "numero": "#9",
-            "usuario": "alrededor de 2 meses",
+            "usuario": "2 meses",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Enviado a Anteproyecto Comentado"
@@ -84,7 +84,7 @@
         },
         {
             "numero": "#10",
-            "usuario": "alrededor de 2 meses",
+            "usuario": "2 meses",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Comentado a Anteproyecto Aceptado",
@@ -264,7 +264,7 @@
         },
         {
             "numero": "#32",
-            "usuario": "19 días",
+            "usuario": "20 días",
             "fecha": "06 Febrero 2026 12:48 PM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado a Trabajo Evaluado",
