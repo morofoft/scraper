@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-03-31 14:15:32 UTC",
+    "actualizado": "2026-03-31 15:39:39 UTC",
     "estado_actual": "Trabajo Pagado",
     "historial": [
         {
@@ -102,7 +102,7 @@
         },
         {
             "numero": "#12",
-            "usuario": "2 meses",
+            "usuario": "3 meses",
             "fecha": "15 Enero 2026 11:39 AM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado al Asesor a Anteproyecto Aceptado",
