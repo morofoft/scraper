@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-04-10 22:06:40 UTC",
+    "actualizado": "2026-04-13 14:23:54 UTC",
     "estado_actual": "Trabajo Pagado",
     "historial": [
         {
@@ -29,7 +29,7 @@
         },
         {
             "numero": "#4",
-            "usuario": "4 meses",
+            "usuario": "5 meses",
             "fecha": "27 Noviembre 2025 03:18 PM",
             "cambios": [
                 "Añadido Fichero Reglamento de trabajos de Grado versión final v1.6.docx Reglamento de trabajos de Grado versión final v1.6.docx",
@@ -76,7 +76,7 @@
         },
         {
             "numero": "#9",
-            "usuario": "3 meses",
+            "usuario": "4 meses",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Enviado a Anteproyecto Comentado"
@@ -84,7 +84,7 @@
         },
         {
             "numero": "#10",
-            "usuario": "3 meses",
+            "usuario": "4 meses",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Comentado a Anteproyecto Aceptado",
@@ -197,7 +197,7 @@
         },
         {
             "numero": "#24",
-            "usuario": "2 meses",
+            "usuario": "3 meses",
             "fecha": "26 Enero 2026 01:11 AM",
             "cambios": [
                 "Estado cambiado de Trabajo Certificado a Trabajo sin deudas"
