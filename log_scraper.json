@@ -27592,5 +27592,14 @@
             "estado": "Trabajo Pagado",
             "historial_items": 32
         }
+    },
+    {
+        "fecha": "2026-05-06 23:33:29 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo Pagado",
+            "historial_items": 32
+        }
     }
 ]
