@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-05-22 15:17:18 UTC",
+    "actualizado": "2026-05-22 17:18:45 UTC",
     "estado_actual": "Trabajo Pagado",
     "historial": [
         {
@@ -264,7 +264,7 @@
         },
         {
             "numero": "#32",
-            "usuario": "3 meses",
+            "usuario": "4 meses",
             "fecha": "06 Febrero 2026 12:48 PM",
             "cambios": [
                 "Estado cambiado de Trabajo Enviado a Trabajo Evaluado",
