@@ -1,5 +1,5 @@
 {
-    "actualizado": "2026-06-11 01:32:41 UTC",
+    "actualizado": "2026-06-11 06:21:33 UTC",
     "estado_actual": "Trabajo Pagado",
     "historial": [
         {
@@ -76,7 +76,7 @@
         },
         {
             "numero": "#9",
-            "usuario": "5 meses",
+            "usuario": "6 meses",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Enviado a Anteproyecto Comentado"
@@ -84,7 +84,7 @@
         },
         {
             "numero": "#10",
-            "usuario": "5 meses",
+            "usuario": "6 meses",
             "fecha": "28 Diciembre 2025 01:32 AM",
             "cambios": [
                 "Estado cambiado de Anteproyecto Comentado a Anteproyecto Aceptado",
