@@ -44755,5 +44755,14 @@
             "estado": "Trabajo Pagado",
             "historial_items": 32
         }
+    },
+    {
+        "fecha": "2026-09-20 21:05:25 UTC",
+        "status": "SUCCESS",
+        "mensaje": "Scraping completado correctamente",
+        "extra": {
+            "estado": "Trabajo Pagado",
+            "historial_items": 32
+        }
     }
 ]
